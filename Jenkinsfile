@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Restore') {
       steps {
-        echo 'Hello'
+        bat(script: 'dotnet restore', returnStatus: true)
       }
     }
   }
