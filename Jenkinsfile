@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'dotnet publish -c Release'
+        echo 'Hello'
       }
     }
   }
