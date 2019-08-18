@@ -22,5 +22,6 @@ namespace NetCoreCICDSample
                 .UseStartup<Startup>();
 
         //Change
+        int a = 1;
     }
 }
