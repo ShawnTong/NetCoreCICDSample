@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat(script: 'dotnet build -c Debug', returnStatus: true)
+        bat 'dotnet build -c Debug'
       }
     }
     stage('Test') {
@@ -21,11 +21,6 @@ pipeline {
         bat 'rmdir /s /q C:\\Package'
         bat 'md C:\\Package'
         bat 'xcopy /e /y NetCoreCICDSample\\bin\\Release\\netcoreapp2.2\\publish C:\\Package'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        bat(script: 'dotnet C:\\Package\\NetCoreCICDSample.dll', returnStatus: true)
       }
     }
   }
