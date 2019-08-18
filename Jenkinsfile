@@ -11,6 +11,11 @@ pipeline {
         echo 'Test Placeholder'
       }
     }
+    stage('Publish') {
+      steps {
+        bat 'dotnet publish -c Release'
+      }
+    }
     stage('Archieve') {
       steps {
         bat 'rmdir /s /q C:\\Package'
